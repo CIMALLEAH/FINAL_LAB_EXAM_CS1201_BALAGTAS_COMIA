@@ -1,5 +1,5 @@
 import os
-
+import ast
 class User:
     def __init__(self):
         self.database = {}
@@ -32,4 +32,19 @@ class User:
                 print(f"Error {e}")
 
     def login(self):
-        username = input ("Enter ")
+        while True:
+            
+            # To build logic if User.txt Exist
+            try:
+                username = input ("Enter username: ")
+                with open('User.txt', 'r') as file:
+                    for line in file:
+                        user_info = ast.literal_eval(line.strip())
+                        if user_info['Name'] == username:
+                            print("User found.")
+                        
+                        password = input("Enter password: ")
+                        if user_info['Password'] == password:
+                            print('Log in successful.')
+            except ValueError as e:
+                print(f"Error {e}")

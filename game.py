@@ -57,7 +57,21 @@ class DiceGame:
     def logout(self):
         pass
     def menu(self):
-        pass
+        print("1. Start Game")
+        print("2. Show top Scores")
+        print("3. logout")
+        while True:
+            try:
+                choice = input("Enter your choice: ")
+                if choice == '1':
+                    pass
+                if choice =='2':
+                    pass
+                if choice == '3':
+                    pass
+            except ValueError as e:
+                print(f"Error{e}")
+                
 
 q1 = DiceGame()
 
