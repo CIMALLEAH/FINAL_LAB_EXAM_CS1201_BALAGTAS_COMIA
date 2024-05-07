@@ -26,7 +26,10 @@ class User:
                 user_info = {'Name': username, 'Password': password, 'Score': 0}
 
                 with open("Users.txt", 'w') as file:
-                    file.write(str(user_info))
+                    file.write(str(user_info, '\n'))
 
             except ValueError as e:
                 print(f"Error {e}")
+
+    def login(self):
+        username = input ("Enter ")
